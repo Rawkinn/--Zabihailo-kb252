@@ -1,0 +1,7 @@
+text = "   Здарова мир   "
+print("Оригінал:", f"'{text}'")
+print("strip():", f"'{text.strip()}'")
+print("capitalize():", text.strip().capitalize())
+print("title():", text.title())
+print("upper():", text.upper())
+print("lower():", text.lower())
