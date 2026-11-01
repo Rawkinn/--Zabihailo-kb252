@@ -1,0 +1,53 @@
+"""Калькулятор із використанням if, elif та else."""
+
+
+def add(a, b):
+    return a + b
+
+
+def subtract(a, b):
+    return a - b
+
+
+def multiply(a, b):
+    return a * b
+
+
+def divide(a, b):
+    if b == 0:
+        raise ZeroDivisionError("Ділити на нуль не можна.")
+    return a / b
+
+
+def calculate(a, operation, b):
+    if operation == "+":
+        return add(a, b)
+    elif operation == "-":
+        return subtract(a, b)
+    elif operation == "*":
+        return multiply(a, b)
+    elif operation == "/":
+        return divide(a, b)
+    else:
+        raise ValueError("Невідома операція. Використовуйте +, -, * або /.")
+
+
+def main():
+    print("Калькулятор if/else")
+    try:
+        a = float(input("Перше число: "))
+        operation = input("Операція (+, -, *, /): ").strip()
+        b = float(input("Друге число: "))
+    except ValueError:
+        print("Помилка: потрібно вводити числа.")
+        return
+
+    try:
+        result = calculate(a, operation, b)
+        print(f"Результат: {result:g}")
+    except (ValueError, ZeroDivisionError) as error:
+        print("Помилка:", error)
+
+
+if __name__ == "__main__":
+    main()
