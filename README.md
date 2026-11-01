@@ -1,3 +1,20 @@
-# --Zabihailo-kb252
-add folder topic_01
-add solution for task1 task2 and task3
+# Технології програмування — КБ-252
+
+Практичні завдання Кирила Забігайла з мови Python.
+
+- `topic_00` — пробний запуск Git.
+- `topic_01` — рядки, методи рядків і дискримінант.
+- `topic_02` — корені квадратного рівняння та калькулятори з `if/else` і `match`.
+- `TP-KB-252-Kirill-Zabihailo-lpr.docx` — спільний звіт до тем 1 і 2.
+
+Для Topic 02 потрібен Python 3.10 або новіший. Сторонні бібліотеки не потрібні.
+
+Запуск із кореня репозиторію:
+
+```text
+python topic_02/task_1.py
+python topic_02/task_2.py
+python topic_02/task_3.py
+```
+
+Опис програм і приклади введення: [topic_02/README.md](topic_02/README.md).
