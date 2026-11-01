@@ -1,6 +1,3 @@
-"""Калькулятор із використанням match та case (Python 3.10+)."""
-
-
 def add(a, b):
     return a + b
 

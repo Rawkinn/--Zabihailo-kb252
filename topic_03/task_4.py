@@ -1,8 +1,4 @@
-"""Пошук позиції вставки у список, відсортований за зростанням."""
-
-
 def find_insert_position(sorted_list, value):
-    """Повертає індекс перед першим елементом, не меншим за value."""
     left = 0
     right = len(sorted_list)
     while left < right:

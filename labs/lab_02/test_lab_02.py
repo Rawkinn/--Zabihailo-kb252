@@ -1,5 +1,3 @@
-"""Юніт-тести телефонного довідника та роботи з CSV."""
-
 import csv
 import os
 from pathlib import Path

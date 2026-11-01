@@ -1,6 +1,3 @@
-"""Перевірка методів словників та оператора del."""
-
-
 def demonstrate_dict_methods():
     marks = {"Python": 85, "Математика": 90}
     print("Початковий словник:", marks)

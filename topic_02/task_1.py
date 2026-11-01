@@ -1,16 +1,12 @@
-"""Пошук дійсних коренів квадратного рівняння."""
-
 import math
 import sys
 from pathlib import Path
 
-# Додаємо корінь репозиторію, щоб імпорт працював із будь-якої папки.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from topic_01.task_3 import get_discriminant
 
 
 def get_roots(a, b, c):
-    """Повертає кортеж із дійсними коренями рівняння ax² + bx + c = 0."""
     if a == 0:
         raise ValueError("Коефіцієнт a не може дорівнювати нулю.")
 
