@@ -1,10 +1,7 @@
-"""Розширення наданого lab_01.py: чотири поля та зміна запису."""
-
 FIELDS = ("name", "phone", "email", "group")
 LABELS = ("ПІБ", "Телефон", "Email", "Група")
 CANCEL_COMMAND = "/cancel"
 
-# Початковий відсортований list із прикладу викладача.
 list = [
     {"name": "Bob", "phone": "0631234567",
      "email": "bob@example.com", "group": "КБ-252"},
@@ -18,7 +15,6 @@ list = [
 
 
 def validate_student(student):
-    """Перевіряє чотири поля та повертає окремий словник."""
     result = {}
     for field, label in zip(FIELDS, LABELS):
         value = student.get(field)
@@ -34,7 +30,6 @@ def check_index(students, index):
 
 
 def printAllList(records=None):
-    """Розширений вивід початкової функції: номер і всі чотири поля."""
     records = list if records is None else records
     if not records:
         print("Довідник порожній.")
@@ -74,7 +69,6 @@ def read_student(current=None):
 
 
 def choose_student(students, allowed=None):
-    """Вибір номера; allowed обмежує вибір знайденими однаковими ПІБ."""
     require_dataset(students)
     printAllList(students)
     if not students:
@@ -94,7 +88,6 @@ def choose_student(students, allowed=None):
 
 
 def find_student(students, name):
-    """Пошук за ім'ям із початкового deleteElement, з уточненням дубля."""
     positions = []
     for position, item in enumerate(students):
         if name.casefold() == item["name"].casefold():
@@ -109,7 +102,6 @@ def find_student(students, name):
 
 
 def addNewElement(newItem=None, records=None):
-    """Додавання з початковим пошуком insertPosition циклом for."""
     records = list if records is None else records
     interactive = newItem is None
     if interactive:
@@ -132,7 +124,6 @@ def addNewElement(newItem=None, records=None):
 
 
 def deleteElement(name=None, records=None, index=None):
-    """Видалення за ПІБ; індекс використовується для точного вибору."""
     records = list if records is None else records
     interactive = index is None
     if interactive:
@@ -155,7 +146,6 @@ def deleteElement(name=None, records=None, index=None):
 
 
 def updateElement(name=None, newItem=None, records=None, index=None):
-    """Заповнена функція викладача: перевірка, видалення і вставка."""
     records = list if records is None else records
     interactive = newItem is None
     if index is None:
@@ -185,8 +175,6 @@ def updateElement(name=None, newItem=None, records=None, index=None):
     return position
 
 
-# Сумісний інтерфейс для CSV і тестів лабораторної роботи 2.
-# Усі операції делегують саме функціям наданого початкового коду.
 def require_dataset(students):
     if students is None:
         raise ValueError("Потрібно передати явний список записів.")

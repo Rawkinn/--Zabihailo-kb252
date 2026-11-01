@@ -1,6 +1,3 @@
-"""Калькулятор із використанням if, elif та else."""
-
-
 def add(a, b):
     return a + b
 

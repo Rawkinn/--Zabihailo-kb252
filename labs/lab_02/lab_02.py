@@ -1,12 +1,9 @@
-"""Телефонний довідник із завантаженням і збереженням CSV."""
-
 import csv
 import os
 import sys
 import tempfile
 from pathlib import Path
 
-# Додаємо корінь репозиторію для запуску з будь-якої папки.
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from labs.lab_01.lab_01 import (
     FIELDS,
@@ -21,7 +18,6 @@ from labs.lab_01.lab_01 import (
 
 
 def load_students(filename):
-    """Читає всі чотири поля, перевіряє дані й сортує за ПІБ."""
     students = []
     with open(filename, encoding="utf-8-sig", newline="") as source:
         reader = csv.DictReader(source, strict=True)
@@ -52,7 +48,6 @@ def load_students(filename):
 
 
 def save_students(filename, students):
-    """Записує CSV через тимчасовий файл, не обрізаючи старі дані."""
     records = [validate_student(student) for student in students]
     records.sort(key=lambda student: student["name"].casefold())
     path = Path(filename)
@@ -74,7 +69,6 @@ def save_students(filename, students):
 
 
 def run_menu(students):
-    """Використовує операції телефонного довідника з лабораторної 1."""
     try:
         while True:
             print("\n1 — додати; 2 — змінити; 3 — видалити;")

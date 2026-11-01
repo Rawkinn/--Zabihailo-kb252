@@ -1,5 +1,3 @@
-"""Калькулятор із циклом і командою завершення."""
-
 import sys
 from pathlib import Path
 
